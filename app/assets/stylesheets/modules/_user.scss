@@ -1,0 +1,79 @@
+.user{
+  margin: 0;
+  padding: 0;
+}
+  .user-page{
+    margin: 300px;
+    padding: 0;
+    border:1px solid #5C443A;
+  }
+    .user-page__inner {
+      width: 980px;
+      margin: 60px auto;
+      padding: 60px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+      .user-page__inner--left account-page__header{
+        float: left;
+        width: 50%;
+      }
+        .h2{
+          margin-bottom: 10px;
+          letter-spacing: 3px;
+          font-size: 80px;
+          font-weight: 200;
+        }
+        .h5{
+          margin-bottom: 20px;
+          font-size: 14px;
+          font-weight: 200;
+        }
+        .btn{
+          margin-top: 20px;
+          color: #fff;
+          background-color: #ccc;
+          font-size: 14px;
+        }
+      .user-page__inner--right user-form{
+        float: left;
+        width: 50%;
+      }
+        .edit_user{
+          margin: 0;
+          padding: 0;
+        }
+        .hidden{
+          font-family: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+        }
+          .field{
+            margin-bottom: 10px;
+            .field-label{
+              padding: 10px 0;
+              letter-spacing: 1px;
+              font-size: 14px;
+              font-weight: 200;
+            
+              &__email{
+                box-sizing: border-box;
+              }
+              &__password{
+                box-sizing: border-box;
+              }
+            }
+          }
+          .actions{
+            float: left;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #38aef0;
+            &__submit{
+              float: left;
+              margin-top: 20px;
+              color: #fff;
+              background-color: #38aef0;
+            }
+          }
