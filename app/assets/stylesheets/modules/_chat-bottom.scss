@@ -1,0 +1,48 @@
+.chat-bottom{
+  overflow: scroll;
+  position:absolute;
+  bottom: 0;
+  background-color: #B8C3C7;
+  height: 90px;
+  width:calc(100% - 300px);
+  .form {
+    box-sizing: border-box;
+    position: relative;
+    clear: fixed;
+    &__message {
+      margin: 20px -32.5px 20px 0;
+      padding: 0 0 0 10px;
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+      &__mask {
+        background-color: #FFFFFF;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        margin: 20px 0;
+      &__image {
+          font-size: 20px;
+          line-height: 50px;
+      }
+    .hidden{
+      display: none;
+    }
+  }
+    
+    
+    &__submit {
+      position:absolute;
+      background-color: #38AEF0;
+      border: none;
+      color: #FFFFFF;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin: 20px 40px 20px 15px;
+      padding: 0 20px;
+    }
+  }
+} 
