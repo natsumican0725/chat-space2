@@ -1,4 +1,5 @@
 .chat-bottom{
+  overflow: scroll;
   position:absolute;
   bottom: 0;
   background-color: #B8C3C7;
@@ -16,17 +17,21 @@
       height: 50px;
       width: calc(100% - 150px);
     }
-       &__mask {
+      &__mask {
         background-color: #FFFFFF;
         float: left;
         height: 50px;
         padding-right: 10px;
         margin: 20px 0;
-        &__image {
+      &__image {
           font-size: 20px;
           line-height: 50px;
-        }
       }
+    .hidden{
+      display: none;
+    }
+  }
+    
     
     &__submit {
       position:absolute;

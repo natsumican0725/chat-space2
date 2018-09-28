@@ -29,17 +29,20 @@
   }
   .groups{
     background-color: #2f3e51;
-    height: calc(100% - 100px);
+    height: calc(100vh - 100px);
     padding: 0 24px;
+    overflow-y: scroll;
     .group {
       box-sizing: border-box;
       padding: 24px 0 40px;
       &__name {
         font-size: 15px;
+        color: #FFFFFF;
       }
       &__message {
         font-size: 11px;
         margin-top: 5px;
+        color: #FFFFFF;
       }
     }
   }

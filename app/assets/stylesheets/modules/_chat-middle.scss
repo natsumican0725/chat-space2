@@ -1,8 +1,9 @@
 .chat-middle {
   width: calc(100% - 300px);
-  height: calc(100% - 124px);
+  height: calc(100vh - 124px);
   margin-top: 24px;
   padding-left: 300px;
+  overflow-y: scroll;
   .header {
     box-sizing: border-box;
     height: 100px;
@@ -16,7 +17,7 @@
       }
       &__members {
         @include flexbox;
-        color: #434A54;
+        color: #999;
         font-size: 12px;
         margin-top: 15px;
         .member {
@@ -42,7 +43,7 @@
   .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
-    padding: 46px 40px 0;
+    padding: 100px 40px 0;
     height: calc(100% - 100px - 90px);
     .message {
       .upper-message {
