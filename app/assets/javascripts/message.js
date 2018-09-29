@@ -6,7 +6,6 @@ $(function(){
 
 
     message.image? image = `<img src="${message.image}" class="lower-message__image">` : image = " "
-      image = `<img src="${message.image}" class="lower-message__image">`
 
     var html = `<div class="message">
                  <div class="upper-message">
@@ -28,7 +27,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    
+
     $.ajax({
       url: url,
       type: "POST",
@@ -45,6 +44,9 @@ $(function(){
 	.fail(function(){
       alert('error');
     })
+    .always(function(){
+   	  $('.form__submit').removeAttr('disabled');
+   	})
   })
 })
 
