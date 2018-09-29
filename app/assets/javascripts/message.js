@@ -1,11 +1,11 @@
 $(function(){
   function buildHTML(message){
-    message.content? content = `<p class="lower-message__content">
+    var content = message.content? `<p class="lower-message__content">
                     ${message.content}
-                  </p>` : content = " "
+                  </p>` : "";
 
 
-    message.image? image = `<img src="${message.image}" class="lower-message__image">` : image = " "
+    var image = message.image? `<img src="${message.image}" class="lower-message__image">` : "";
 
     var html = `<div class="message">
                  <div class="upper-message">
@@ -49,5 +49,4 @@ $(function(){
    	})
   })
 })
-
 
