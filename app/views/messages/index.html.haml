@@ -1,23 +1,17 @@
-/ .nav
-/   = render 'shared/notification'
 .wrapper
   = render 'shared/chat-side'
   .chat-middle
     .chat-top
       .left-header
         .left-header__title
-          tech-three
+          = @group.name
         %ul.left-header__members
           Member：
           %li.member
-            濟川奈津美
-          %li.member
-            田中大貴
-          %li.member
-            小室裕也
+            = @group.users.pluck(:name).join(", ")
       .right-header
         .right-header__button
-          Edit
+          = link_to "Edit", edit_group_path(@group)
     .messages
       =render partial: "message", collection: @messages
     .chat-bottom
