@@ -26,12 +26,9 @@
       #chat-group-members
         = current_user.name
     #chat-group-users
-      #chat-group-user-22.chat-group-user.clearfix
-        = hidden_field_tag 'chat_group[user_ids][]', '22'
+      #chat-group-user-8.chat-group-user.clearfix
+        = hidden_field_tag 'chat_group[user_ids][]', '8'
         %p.chat-group-user__name
-        /   = @users.name
-        /     - unless @users.name == current_user.name
-
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
