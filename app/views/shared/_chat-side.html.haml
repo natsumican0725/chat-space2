@@ -1,6 +1,6 @@
 .chat-side
   .header
-    %h3.header__name
+    %h3.header__user_name
       = current_user.name
     %ul.header__lists
       %li.list
@@ -13,12 +13,8 @@
     - current_user.groups.each do |group|
       .group
         = link_to group_messages_path(group) do
-          .group__name
+          .group__group_name
             = group.name
           .group__message
             = group.show_last_message
-
-
-
-
 

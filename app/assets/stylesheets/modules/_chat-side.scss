@@ -10,7 +10,7 @@
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
-    &__name {
+    &__user_name {
       display: inline-block;
       font-size: 16px;
       font-weight: bold;
@@ -35,7 +35,7 @@
     .group {
       box-sizing: border-box;
       padding: 24px 0 40px;
-      &__name {
+      &__group_name {
         font-size: 15px;
         color: #FFFFFF;
       }
