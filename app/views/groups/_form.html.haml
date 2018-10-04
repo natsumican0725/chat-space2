@@ -7,7 +7,7 @@
           %li= message
   .chat-group-form__field
     .chat-group-form__field--left
-      = f.label :グループ, class: 'chat-group-form__label'
+      = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
@@ -16,20 +16,22 @@
     .chat-group-form__field--left
       = f.label :チャットメンバーを追加, class: "chat-group-form__label", for: "chat_group_チャットメンバーを追加"
     .chat-group-form__field--right
-      = f.text_field :name, class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text"
       .chat-group-form__search.clearfix
+        = f.text_field :id, class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text"
       #user-search-result
-  .chat-group-form__field
+  .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :チャットメンバー, class: 'chat-group-form__label'
     .chat-group-form__field--right
-      #chat-group-members
-      = current_user.name
-    #chat-group-users
-      #chat-group-user-8.chat-group-user.clearfix
-        = hidden_field :user_id, value: "8", name: "group[user_ids][]"
-        %p.chat-group-user__name
-
+      #chat-group-users
+        - @group.users.each do |user|
+          .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+            = f.hidden_field :user_id, class: 'chat_member_id', value: user.id, name: "group[user_ids][]"
+            %p.chat-group-user__name
+              = user.name
+            - unless user.name == current_user.name
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+                削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right

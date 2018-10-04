@@ -3,7 +3,6 @@
   height: calc(100vh - 124px);
   margin-top: 24px;
   padding-left: 300px;
-  overflow-y: scroll;
   .header {
     box-sizing: border-box;
     height: 100px;
@@ -41,10 +40,11 @@
     }
   }
   .messages {
+    overflow-y: scroll;
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 100px 40px 0;
-    height: calc(100% - 100px - 90px);
+    height: 100%;
     .message {
       .upper-message {
         display: flex;
