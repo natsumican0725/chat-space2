@@ -42,8 +42,8 @@ $(function(){
 	.done(function(data){
 	  var html = buildHTML(data);
 	  $('.messages').append(html)
-	  $('.form__message').val('')
-    $('.hidden').val('');
+	  $('input:hidden[name="form__message"]').val('')
+    // $('.hidden').val('');
     scrollBottom();
 	})
 	.fail(function(){
