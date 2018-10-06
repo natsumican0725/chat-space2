@@ -30,7 +30,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-
     $.ajax({
       url: url,
       type: "POST",
@@ -42,8 +41,7 @@ $(function(){
 	.done(function(data){
 	  var html = buildHTML(data);
 	  $('.messages').append(html)
-	  $('input:hidden[name="form__message"]').val('')
-    // $('.hidden').val('');
+    $('input:hidden[name="form__message"]').val('')
     scrollBottom();
 	})
 	.fail(function(){
@@ -52,21 +50,24 @@ $(function(){
     .always(function(){
    	  $('.form__submit').removeAttr('disabled');
    	})
-  })
+  });
+
   $(function(){
-    setInterval(update, 3000);
+    var interval = setInterval(update, 3000);
   });
    function update(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
+      var message_id = $('.message:last').data('messageId');
       $.ajax({
         url: location.href,
+        type: "GET",
+        data: {message: {id: message_id} },
         dataType: 'json'
       })
       .done(function(json) {
-        var id = $('.message:last').data('messageId');
         var insertHTML ='';
         json.messages.forEach(function(message){
-          if( message.id  > id ){
+          if( message.id  > message_id ){
             insertHTML += buildHTML(message);
             $('.message').append(insertHTML);
             scrollBottom();
@@ -77,7 +78,7 @@ $(function(){
         alert('自動更新に失敗しました');
       });
    } else {
-    clearInterval(setInterval);
+    clearInterval(interval);
    }
   }
 });
