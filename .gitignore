@@ -15,4 +15,5 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-# public/uploads/*
+public/uploads/*
+public/images/IMG_7191.jpg
