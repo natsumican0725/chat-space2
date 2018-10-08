@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'us-east-1'
   }
 
-  config.fog_directory  = 'natsu-space2'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/natsu-space2'
+  config.fog_directory  = 'upload-test-natsu'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/upload-test-natsu'
 end
