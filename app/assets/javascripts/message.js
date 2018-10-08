@@ -9,16 +9,16 @@ $(function(){
 
     var html = '<div class="message" data-message-id="${message.id}">' +
                  '<div class="upper-message">' +
-                   '<div class="upper-message__user-name">'
-                     + message.user_name +
+                   '<div class="upper-message__user-name">' +
+                     ${message.user_name} +
                    '</div>' +
-                   '<div class="upper-message__date">'
-                     + message.date +
+                   '<div class="upper-message__date">' +
+                     ${message.date} +
                    '</div>' +
                  '</div>' +
-                 '<div class="lower-meesage">'
-                  + content
-                  + image +
+                 '<div class="lower-meesage">'+
+                  ${content}
+                  ${image} +
                  '</div>' +
                 '</div>'
     return html;
