@@ -43,6 +43,7 @@ $(function(){
 	  $('.messages').append(html)
     $('input:hidden[name="form__message"]').val('')
     scrollBottom();
+    console.log("done")
 	})
 	.fail(function(){
       alert('error');
