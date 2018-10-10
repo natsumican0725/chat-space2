@@ -6,7 +6,6 @@ $(function(){
 
 
     var image = message.image? `<img src="${message.image}" class="lower-message__image">` : "";
-    console.log(image);
 
     var html = `<div class="message" data-message-id="${message.id}">
                  <div class="upper-message">
@@ -44,7 +43,6 @@ $(function(){
 	  $('.messages').append(html)
     $('input:hidden[name="form__message"]').val('')
     scrollBottom();
-    console.log("done")
 	})
 	.fail(function(){
       alert('error');
