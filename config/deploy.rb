@@ -1,33 +1,33 @@
-# # config valid for current version and patch releases of Capistrano
-# lock "~> 3.11.0"
+# config valid for current version and patch releases of Capistrano
+lock "~> 3.11.0"
 
-# set :application, "chat-space2"
-# set :repo_url, "git@github.com:natsumican0725/chat-space2.git"
+set :application, "chat-space2"
+set :repo_url, "git@github.com:natsumican0725/chat-space2.git"
 
-# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
-# set :rbenv_type, :user
-# set :rbenv_ruby, '2.3.1'
+set :rbenv_type, :user
+set :rbenv_ruby, '2.3.1'
 
-# set :ssh_options, auth_methods: ['publickey'],
-#                   keys: ['/Users/natsumican/.ssh/nakkey.pem']
+set :ssh_options, auth_methods: ['publickey'],
+                  keys: ['/Users/natsumican/.ssh/nakkey.pem']
 
-# set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-# set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
-# set :keep_releases, 5
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :keep_releases, 5
 
-# after 'deploy:publishing', 'deploy:restart'
-# # secrets.yml用のシンボリックリンクを追加
-# set :linked_files, %w{ config/secrets.yml }
+after 'deploy:publishing', 'deploy:restart'
+# secrets.yml用のシンボリックリンクを追加
+set :linked_files, %w{ config/secrets.yml }
 
-# # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
+# 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
-# after 'deploy:publishing', 'deploy:restart'
-# namespace :deploy do
-#   task :restart do
-#     invoke 'unicorn:restart'
-#   end
-# end
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
 
 
 # set :default_env, {
