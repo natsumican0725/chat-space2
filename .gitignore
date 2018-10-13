@@ -17,4 +17,4 @@
 .byebug_history
 public/uploads/*
 public/images/IMG_7191.jpg
-# config/secrets.yml
+config/secrets.yml
