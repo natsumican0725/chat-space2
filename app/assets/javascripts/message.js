@@ -41,14 +41,15 @@ $(function(){
 	.done(function(data){
 	  var html = buildHTML(data);
 	  $('.messages').append(html)
-    $('input:hidden[name="form__message"]').val('')
+    $('.form__message').val('')
+    $('.hidden').val('');
     scrollBottom();
 	})
 	.fail(function(){
       alert('error');
     })
     .always(function(){
-   	  $('.form__submit').removeAttr('disabled');
+   	  $('.form__submit').prop('disabled', false);
    	})
   });
 
