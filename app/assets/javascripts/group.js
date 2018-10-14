@@ -18,7 +18,7 @@ $(function() {
     e.preventDefault();
     var input = $(this).val();
       if (input.length === 0) {
-        $('#user-search-result').remove();
+        $('#user-search-result') = [];
       // フォームに値がないときに、listを全て削除する。
       }
 
