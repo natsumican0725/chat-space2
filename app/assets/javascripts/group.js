@@ -17,6 +17,8 @@ $(function() {
    $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $(this).val();
+
+
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -26,6 +28,10 @@ $(function() {
      .done(function(user) {
       $("#user-search-result").empty();
       var chat_member_list = [];
+      if (input.length === 0) {
+        $('#user-search-result').remove();
+      // フォームに値がないときに、listを全て削除する。
+      }
       $("#chat-group-users").find('.chat_member_id').each( function( element ) {
         chat_member_list.push(element.value);
       });
