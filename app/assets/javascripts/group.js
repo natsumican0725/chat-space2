@@ -17,10 +17,6 @@ $(function() {
    $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $(this).val();
-      if (input.length === 0) {
-        $('#user-search-result') = [];
-      // フォームに値がないときに、listを全て削除する。
-      }
 
     $.ajax({
       type: 'GET',
@@ -29,21 +25,24 @@ $(function() {
       dataType: 'json',
     })
      .done(function(user) {
-      $("#user-search-result").empty();
-      var chat_member_list = [];
-      $("#chat-group-users").find('.chat_member_id').each( function( element ) {
-        chat_member_list.push(element.value);
-      });
-       user.forEach(function(user){
-        if(chat_member_list.indexOf(String(user.id)) == -1){
-          html = buildHTML(user);
-          $('#user-search-result').append(html);
-        }
-      });
-    })
-     .fail(function(){
-      alert('Error');
-    })
+      if (input.length === 0) {
+      } else {
+        $("#user-search-result").empty();
+        var chat_member_list = [];
+        $("#chat-group-users").find('.chat_member_id').each( function( element ) {
+          chat_member_list.push(element.value);
+        });
+        user.forEach(function(user){
+          if(chat_member_list.indexOf(String(user.id)) == -1){
+            html = buildHTML(user);
+            $('#user-search-result').append(html);
+          }
+        });
+      }
+      })
+       .fail(function(){
+        alert('Error');
+      })
   });
    $(document).on("click", ".user-search-add", function (e) {
     var user_id = $(this).attr('data-user-id');
