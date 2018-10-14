@@ -53,30 +53,33 @@ $(function(){
    	})
   });
 
-  $(function(){
+  // $(function(){
     var interval = setInterval(update, 3000);
-  });
+  // });
    function update(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
-      var message_id = $('.message:last').data('messageId');
+      var message_id = $('.message').last().data('message-id');
+      console.log(message_id)
       $.ajax({
         url: location.href,
         type: "GET",
-        data: {message: {id: message_id} },
+        data: {message: message_id },
         dataType: 'json'
       })
       .done(function(json) {
         var insertHTML ='';
         json.messages.forEach(function(message){
+          console.log(message)
           if( message.id  > message_id ){
             insertHTML += buildHTML(message);
-            $('.message').append(insertHTML);
+            $('.messages').append(insertHTML);
             scrollBottom();
           }
         });
       })
       .fail(function(json) {
-        alert('自動更新に失敗しました');
+        console.log('自動更新に失敗しました')
+        // alert('自動更新に失敗しました');
       });
    } else {
     clearInterval(interval);
