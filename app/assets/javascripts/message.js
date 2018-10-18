@@ -53,13 +53,10 @@ $(function(){
    	})
   });
 
-  // $(function(){
     var interval = setInterval(update, 3000);
-  // });
    function update(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
       var message_id = $('.message').last().data('message-id');
-      console.log(message_id)
       $.ajax({
         url: location.href,
         type: "GET",
@@ -78,8 +75,7 @@ $(function(){
         });
       })
       .fail(function(json) {
-        console.log('自動更新に失敗しました')
-        // alert('自動更新に失敗しました');
+        alert('自動更新に失敗しました');
       });
    } else {
     clearInterval(interval);
